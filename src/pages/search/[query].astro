@@ -1,0 +1,15 @@
+---
+import AppWrapper from "../../components/Astro/AppWrapper/AppWrapper.astro"
+import MovieDetail from "../../components/React/MovieDetail"
+import MovieSearch from "../../components/React/Search"
+
+export const prerender = false;
+
+const {query} = Astro.params
+
+let movieQuery = query as string
+
+---
+<AppWrapper>
+    <MovieSearch client:load query={movieQuery}/>
+</AppWrapper>

@@ -1,0 +1,17 @@
+---
+import AppWrapper from "../components/Astro/AppWrapper/AppWrapper.astro"
+import Movie from "../components/React/Movies/index"
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
+
+---
+
+<AppWrapper title="msenge">
+	<Movie page={1} client:load/>
+</AppWrapper>

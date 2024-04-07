@@ -1,0 +1,14 @@
+---
+import AppWrapper from "../../components/Astro/AppWrapper/AppWrapper.astro"
+import MovieDetail from "../../components/React/MovieDetail"
+import Movie from "../../components/React/Movies";
+
+export const prerender = false;
+
+const {page} = Astro.params
+
+let pageNumber = parseInt(page as string)
+---
+<AppWrapper>
+    <Movie client:load page={pageNumber}/>
+</AppWrapper>

@@ -1,0 +1,15 @@
+---
+import AppWrapper from "../../components/Astro/AppWrapper/AppWrapper.astro"
+import MovieDetail from "../../components/React/MovieDetail"
+
+export const prerender = false;
+
+const {id} = Astro.params
+
+let movieId = parseInt(id as string)
+
+
+---
+<AppWrapper>
+    <MovieDetail id={movieId} client:load/>
+</AppWrapper>
